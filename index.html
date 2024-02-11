@@ -46,9 +46,7 @@
 					alert(msg);
 					return;
 			   }
-			   var t = $('#temp').val();//celsius
-			   var u = $('#unit').val();
-			   
+			   function conversion (u,t)
 			   var t1;
 			   var u1;
 			   
@@ -62,7 +60,7 @@
 					t1 = t * (4/5);
 					u1 = "Kelvin";
 			   }
-			   
+			   return{u1,t1};
 			   alert("Temperature is "+t1+" in "+u1);
 			});
 		});
