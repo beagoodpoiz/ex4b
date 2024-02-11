@@ -46,7 +46,7 @@
 					alert(msg);
 					return;
 			   }
-			   function conversion (u,t)
+			   function conversion (u,t){
 			   var t1;
 			   var u1;
 			   
@@ -61,7 +61,16 @@
 					u1 = "Kelvin";
 			   }
 			   return{u1,t1};
-			   alert("Temperature is "+t1+" in "+u1);
+			}
+			  $("bottom").click(function(){
+				var u = $('#unit').val();
+				var t = $('#temp').val();
+
+				var chk = validate(t);
+				if(chk !=null) return chk;
+				var cvs = conversion(u,t);
+				document.getElementById("result").innerHTML=("Temperature is "+cvs.t1+"in"+cvs.u1);
+			  })
 			});
 		});
 	</script>
